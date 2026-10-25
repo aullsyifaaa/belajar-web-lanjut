@@ -1,9 +1,17 @@
 import { Elysia } from "elysia";
 import { mahasiswaRoute } from "./routes/mahasiswa";
-const app = new Elysia();
+import { produkRoute } from "./routes/produk";
 
-app.use(mahasiswaRoute);
+const port = Number(process.env.PORT ?? 3001);
 
-app.listen(3001);
+if (!Number.isInteger(port) || port < 1 || port > 65535) {
+  throw new Error("PORT harus berupa bilangan bulat antara 1 dan 65535");
+}
 
-console.log(`Server berjalan pada http://${app.server?.hostname}:${app.server?.port}`);
+export const app = new Elysia()
+  .use(mahasiswaRoute)
+  .use(produkRoute);
+
+app.listen(port);
+
+console.log(`Server berjalan pada http://localhost:${port}`);

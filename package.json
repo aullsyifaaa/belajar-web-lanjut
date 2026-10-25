@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.7",
+    "drizzle-orm": "^1.0.0-rc.4",
+    "postgres": "^3.4.9"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "drizzle-kit": "^1.0.0-rc.4",
+    "tsx": "^4.23.15",
+    "typescript": "^5.7.3"
+  }
+}
